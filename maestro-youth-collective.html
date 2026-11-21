@@ -547,6 +547,54 @@
   @keyframes card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   @media(max-width:640px){.to-top{right:16px;bottom:16px;width:42px;height:42px}}
   @media(prefers-reduced-motion:reduce){.hero .badge-wrap{transition:none}.needs-grid .need-card{animation:none}.to-top{transition:none}}
+
+  /* Community field notes and events noticeboard */
+  .community-section{background:var(--paper);}
+  .community-intro{display:grid;grid-template-columns:1.35fr 1fr;gap:70px;align-items:end;margin-bottom:56px;}
+  .community-intro h2,.events-heading h2{font-size:clamp(2.3rem,4.8vw,4rem);margin-top:16px;max-width:700px;}
+  .community-intro h2 em{color:var(--green-deep);font-weight:500;}
+  .community-intro p{font-size:1rem;line-height:1.85;max-width:420px;}
+  .community-notes{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px;border-top:1px solid var(--ink);padding-top:34px;}
+  .community-aside{align-self:start;padding:30px 28px;background:#ebe9db;border-left:3px solid var(--gold-deep);transform:rotate(-2deg);margin:8px 12px 0 0;}
+  .community-aside blockquote{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,2.6vw,2.25rem);line-height:1.3;margin:22px 0;}
+  .community-aside p{font-size:.9rem;line-height:1.75;}
+  .community-list{list-style:none;padding:0;margin:0;counter-reset:initiative;}
+  .community-list li{counter-increment:initiative;display:grid;grid-template-columns:36px 1fr;gap:18px;padding:25px 0;border-bottom:1px solid var(--line);}
+  .community-list li:first-child{padding-top:0;}
+  .community-list li::before{content:'0' counter(initiative);font:500 .72rem/1.5 'IBM Plex Mono',monospace;color:var(--green-deep);padding-top:6px;}
+  .community-list h3{font-size:1.5rem;margin-bottom:10px;}
+  .community-list p{font-size:.94rem;line-height:1.8;}
+  .community-link{display:inline-block;margin-top:28px;border-bottom:1px solid var(--ink);padding-bottom:4px;font:600 .9rem/1.6 system-ui,sans-serif;}
+  .community-link:hover{color:var(--green-deep);border-color:var(--green-deep);}
+  .events-section{background:#e9e5da;}
+  .events-heading{display:flex;justify-content:space-between;align-items:end;gap:36px;margin-bottom:42px;}
+  .events-heading p{max-width:335px;font-size:.96rem;line-height:1.8;}
+  .event-notice{display:grid;grid-template-columns:145px 1fr;gap:40px;background:var(--paper);border-top:4px solid var(--sky-deep);padding:42px;}
+  .event-stamp{border:1px solid var(--line);align-self:start;text-align:center;padding:25px 12px;color:var(--sky-deep);}
+  .event-stamp b{display:block;font:600 2.8rem/1.1 'Playfair Display',Georgia,serif;margin:12px 0;}
+  .event-stamp span{font:500 .65rem/1.6 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+  .event-status{display:inline-block;font:500 .7rem/1.5 'IBM Plex Mono',monospace;color:var(--green-deep);border-bottom:1px solid var(--green);padding-bottom:5px;}
+  .event-copy h3{font-size:clamp(1.8rem,3vw,2.5rem);margin:20px 0 16px;}
+  .event-copy p{max-width:650px;font-size:.96rem;line-height:1.85;}
+  .event-copy .btn{margin-top:26px;}
+  .event-fineprint{margin-top:16px!important;font-family:system-ui,sans-serif;font-size:.8rem!important;color:#52605a;}
+  .event-partnership{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;border-bottom:1px solid var(--ink);padding:32px 0;}
+  .event-partnership h3{font-size:1.55rem;margin-bottom:10px;}
+  .event-partnership p{max-width:700px;font-size:.92rem;line-height:1.8;}
+  @media(min-width:901px){nav.links{gap:16px}nav.links a{font-size:.8rem}.brand{flex-shrink:0}}
+  @media(max-width:1100px) and (min-width:901px){nav.links{gap:11px}nav.links a{font-size:.72rem}.brand-text b{font-size:.96rem}.nav{gap:20px}}
+  @media(max-width:900px){
+    nav.links{display:none}.menu-toggle{display:block}
+    .mobile-menu{position:absolute;left:0;right:0;top:100%;display:block;padding:10px 24px 24px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(18,19,15,.12);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s,transform .22s,visibility .22s;max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain}
+    .mobile-menu.open{opacity:1;visibility:visible;transform:translateY(0)}
+    .mobile-menu a{display:block;padding:12px 4px;border-bottom:1px solid var(--line)}
+    .mobile-menu a:last-child{margin-top:10px;text-align:center;border:0}body.menu-open{overflow:hidden}
+    .community-intro{gap:30px}.community-notes{gap:35px;grid-template-columns:1fr 1.5fr}.events-heading{align-items:start;flex-direction:column;gap:20px}.events-heading p{max-width:550px}
+  }
+  @media(max-width:640px){
+    .community-intro,.community-notes{grid-template-columns:1fr;gap:32px}.community-intro{margin-bottom:32px}.community-intro h2,.events-heading h2{font-size:2.45rem}.community-aside{transform:none;margin:0}.community-list li{gap:10px;grid-template-columns:30px 1fr}.event-notice{grid-template-columns:1fr;gap:24px;padding:26px}.event-stamp{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px}.event-stamp b{font-size:1.8rem;margin:0}.event-partnership{grid-template-columns:1fr;gap:22px}.event-partnership .btn{justify-self:start}
+  }
+
 </style>
 </head>
 <body>
@@ -559,9 +607,9 @@
     </a>
     <nav class="links">
       <a href="#fees">Sponsor a Learner</a>
-      <a href="#needs">Where We're Needed</a>
+      <a href="#community">Community</a>
       <a href="#training">Vocational Training</a>
-      <a href="#impact">Impact</a>
+      <a href="#events">Events</a>
       <a href="#hiring">Hire & Teach</a>
       <a href="#involved">Get Involved</a>
       <a class="btn gold" href="#fees">Donate</a>
@@ -570,9 +618,9 @@
   </div>
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="#fees">Sponsor a Learner</a>
-    <a href="#needs">Where We're Needed</a>
+    <a href="#community">Community</a>
     <a href="#training">Vocational Training</a>
-    <a href="#impact">Impact</a>
+    <a href="#events">Events</a>
     <a href="#hiring">Hire & Teach</a>
     <a href="#involved">Get Involved</a>
     <a class="btn gold" href="#fees">Donate</a>
@@ -757,6 +805,24 @@
   </div>
 </section>
 
+
+<section class="community-section" id="community" aria-labelledby="community-title">
+  <div class="wrap">
+    <div class="community-intro reveal">
+      <div><span class="eyebrow">Community initiatives &amp; youth empowerment</span><h2 id="community-title">A place to belong.<br>A chance to <em>lead.</em></h2></div>
+      <p>Opportunity grows through people. Alongside education and practical skills, we want to create space for young people to find their voice, build confidence and contribute to the communities they call home.</p>
+    </div>
+    <div class="community-notes">
+      <aside class="community-aside reveal"><span class="eyebrow">Our ambition</span><blockquote>Young people should help shape what comes next.</blockquote><p>Have an idea for your community? We would love to hear it. The best place to start is with the people who live there.</p><a class="community-link" href="mailto:hello@maestroyouthcollective.org?subject=Community%20initiative%20idea">Share a community idea <span aria-hidden="true">↗</span></a></aside>
+      <ol class="community-list">
+        <li class="reveal"><div><h3>Mentorship &amp; finding your voice</h3><p>A space for conversations about life, work and the future. We welcome mentors who can share their experience and help young people take their next step.</p></div></li>
+        <li class="reveal"><div><h3>Youth-led ideas</h3><p>From a neighbourhood project to a creative gathering, young people bring ideas worth listening to. Help us explore opportunities for leadership, collaboration and putting those ideas into practice.</p></div></li>
+        <li class="reveal"><div><h3>Community in action</h3><p>Local organisations, volunteers and businesses can help turn shared concerns into practical action. Bring your time, a useful skill or an idea for something we could build together.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="impact-section" id="impact">
   <div class="wrap">
     <div class="section-head reveal">
@@ -783,6 +849,18 @@
   </div>
 </section>
 
+
+<section class="events-section" id="events" aria-labelledby="events-title">
+  <div class="wrap">
+    <div class="events-heading reveal"><div><span class="eyebrow">The noticeboard</span><h2 id="events-title">Good things happen<br>when we gather.</h2></div><p>Upcoming events, shared experiences and new ways to support young people. This is where you will find what is next.</p></div>
+    <article class="event-notice reveal" aria-labelledby="next-event-title">
+      <div class="event-stamp" aria-label="Next event: date to be announced"><span>Up next</span><b>TBA</b><span>Watch this space</span></div>
+      <div class="event-copy"><span class="event-status">Upcoming events · Dates coming soon</span><h3 id="next-event-title">The next gathering starts here.</h3><p>There are no confirmed events to announce just yet. When dates are set, we will share the programme, venue and booking details here, with ticket links for events that require them.</p><a class="btn" href="mailto:hello@maestroyouthcollective.org?subject=MYC%20upcoming%20events%20enquiry">Ask about upcoming events <span aria-hidden="true">↗</span></a><p class="event-fineprint">Tickets are not on sale yet. Event enquiries open in your email app.</p></div>
+    </article>
+    <div class="event-partnership reveal"><div><span class="eyebrow">For sponsors &amp; collaborators</span><h3 style="margin-top:12px">Bring an idea. Let’s make it happen.</h3><p>A fundraiser, a youth showcase or a skills workshop: help shape an event with a purpose. We welcome conversations about sponsorship, venues, equipment and co-hosting.</p></div><a class="btn outline" href="mailto:partners@maestroyouthcollective.org?subject=Event%20sponsorship%20or%20co-hosting%20proposal&amp;body=Hello%20MYC%2C%0A%0AOrganisation%3A%20%0AEvent%20idea%3A%20%0AHow%20we%20could%20help%3A%20%0APreferred%20timing%3A%20%0AContact%20details%3A%20">Sponsor or co-host an event <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
+
 <section class="involve-section" id="involved">
   <div class="wrap">
     <div class="section-head reveal">
@@ -803,7 +881,7 @@
       </div>
       <div class="involve-card reveal">
         <h4>Partner with us</h4>
-        <p>Schools, employers and suppliers, talk to us about fee accounts, placements or discounted materials.</p>
+        <p>Schools, employers and local businesses: support a community initiative, sponsor an event or help with placements and materials.</p>
         <a class="btn outline" style="border-color:rgba(255,253,248,0.88);color:#fff;" href="mailto:partners@maestroyouthcollective.org">Start a conversation</a>
       </div>
     </div>
@@ -911,6 +989,8 @@
         <ul>
           <li><a href="#fees">Sponsor a Learner</a></li>
           <li><a href="#training">Vocational Training</a></li>
+          <li><a href="#community">Community &amp; youth empowerment</a></li>
+          <li><a href="#needs">Where we’re needed</a></li>
           <li><a href="#impact">Impact stories</a></li>
         </ul>
       </div>
@@ -918,6 +998,7 @@
         <h5>Organisation</h5>
         <ul>
           <li><a href="#involved">Get involved</a></li>
+          <li><a href="#events">Upcoming events &amp; partnerships</a></li>
           <li><a href="mailto:hello@maestroyouthcollective.org">Contact us</a></li>
           <li><a href="#">Annual report</a></li>
         </ul>
